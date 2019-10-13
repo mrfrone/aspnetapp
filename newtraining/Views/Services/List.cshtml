@@ -1,14 +1,25 @@
 ﻿<h1>Услуги</h1>
 <h3>@Model.currCategory</h3>
-@{
-    foreach(var service in Model.AllServices)
-    {
-        <div>
-             <h3>Наименование: @service.serviceName</h3>
-             <p>Цена: @service.servicePrice.ToString("c")</p>
-        </div>
-    }
-}
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th scope="col">Наименование</th>
+            <th scope="col">Цена</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            foreach (var service in Model.AllServices)
+            {
+
+                <tr>
+                    <td>@service.serviceName</td>
+                    <td>@service.servicePrice.ToString("c")</tr>
+
+            }
+        }
+    </tbody>
+</table>
 
 
 
